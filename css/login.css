@@ -1,0 +1,35 @@
+body{
+    padding-top: 150px;
+    background-color: #393D49;
+}
+.container{
+    width: 100%;
+    min-width: 767px;
+    color: #fff;
+}
+.login,.register{
+    width: 450px;
+    margin: 0 auto;
+    padding: 10px 40px 10px 10px;
+    border: 1px solid rgba(153, 145, 140,0);
+    border-radius: 5px;
+    background-color: rgba(153, 145, 140, 0.2);
+}
+.register{
+    display: none;
+    padding-top: 40px;
+}
+.login>p{
+    font-size: 36px;
+    text-align: right;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+select[name="limits"]+div{
+    color: #393D49;
+}
+a{
+    padding: 5px;
+    margin: 10px;
+    color: #656565;
+}

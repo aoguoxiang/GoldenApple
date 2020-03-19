@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>金苹果幼儿园管理系统</title>
+        <link rel="stylesheet" href="../util/layui//css/layui.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <script src="../util/jquery/jquery-3.4.0.js"></script>
+    </head>
+    <body>
+        <section class="left">
+            <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="nav-side">
+                <li>GOLDEN APPLE</li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">主页</a></li>
+                <li class="layui-nav-item  layui-nav-itemed">
+                    <a href="javascript:;">管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">部门管理</a></dd>
+                        <dd><a href="javascript:;">职工管理</a></dd>
+                        <dd><a href="javascript:;">学员管理</a></dd>
+                    </dl>
+                </li>
+                <!-- <li class="layui-nav-item"><a href="javascript:;">公告安排</a></li> -->
+                <li class="layui-nav-item"><a href="javascript:;">物资管理</a></li>
+                <li class="layui-nav-item"><a href="javascript:;">照片墙</a></li>
+            </ul>
+        </section>
+        <section class="right">
+            <ul class="layui-nav horizon-nav clearbox" lay-filter="nav-level">
+                <div class="nav-left">
+                    <li class="layui-nav-item">
+                        <a href="javascript:removeClickState()">
+                            <i class="layui-icon layui-icon-shrink-right" style="font-size: 20px;"></i>
+                        </a>
+                    </li>
+                </div>
+                <div class="nav-right">
+                    <li class="layui-nav-item">
+                        <a href="javascript:removeClickState();"><i class="layui-icon layui-icon-notice"></i><span class="layui-badge">1</span></a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:void(0);"><img src="../imgs/head_pic01.png" class="layui-nav-img"><span id="username">我</span></a>
+                        <dl class="layui-nav-child hover-bg">
+                            <!-- 自定义元素属性data-state代表点击时执行的功能 -->
+                            <dd><a href="javascript:removeClickState();" data-state="2"><i class="layui-icon layui-icon-edit"></i>修改信息</a></dd>
+                            <dd><a href="javascript:removeClickState();" data-state="0"><i class="layui-icon layui-icon-delete"></i>注销账号</a></dd>
+                            <dd><a href="javascript:removeClickState();" data-state="1"><i class="layui-icon layui-icon-logout"></i>安全退出</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:removeClickState();"><i class="layui-icon layui-icon-set"></i>主题</a>
+                        <dl class="layui-nav-child nav-bgcolor">
+                            <!-- 自定义元素属性data-state代表点击时执行的功能 -->
+                            <dd><a href="javascript:;">粉红</a></dd>
+                            <dd><a href="javascript:;">艳蓝</a></dd>
+                            <dd><a href="javascript:;">橙色</a></dd>
+                            <dd><a href="javascript:;">默认</a></dd>
+                        </dl>
+                    </li>
+                </div>
+            </ul>
+        </section>
+        <script src="../util/layui/layui.js"></script>
+        <script src="../js/index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+.right{
+    width: calc(100% - 200px);
+    float: right;
+}
+.horizon-nav{
+    padding-left: 0;
+    border-radius: 0;
+}
+.clearbox::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.nav-left{
+    width: 10%;
+    float: left;
+}
+.nav-right{
+    width: 90%;
+    float: right;
+    text-align: right;
+}
+.layui-icon.layui-icon-notice{
+    font-size: 20px;
+}
+.layui-icon-logout,.layui-icon-delete,.layui-icon-edit{
+    font-size: 16px;
+    margin-right: 5px;
+}
+.layui-icon.layui-icon-set{
+    font-size: 20px;
+    margin-right: 5px;
+}
+/* 侧边导航栏样式设置 */
+.left>ul{
+    border-radius: 0;
+}
+.left>ul>li:first-child{
+    height: 62px;
+    line-height: 62px;
+    text-align: center;
+    font-style: oblique;
+    font-weight: bold;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0,0.18);
+}
+/* .hover-bg>dd:hover{
+    background-color: #5FB878;
+} */
