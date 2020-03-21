@@ -2,7 +2,19 @@
 function switchLoginOrRegis(){
     $(".login,.register").toggle();
 }
+// 加载职工，学员，物资，部门信息，存入localStorage
+var prefixURL='json/';
+var suffixURL='.json';
+var fileNames=['userInfo','studentInfo','goodsInfo','departmentInfo'];
+fileNames.forEach(function(elem){
+    if(!localStorage[elem]){
+        $.getJSON(prefixURL+elem+suffixURL,function(res){
+            localStorage[elem]=JSON.stringify(res.data);
+        });
+    }
+});
 $("#pw").val(sessionStorage.password);
+
 layui.use(['form','layer'],function(){
     let form=layui.form
     ,layer=layui.layer;
@@ -23,6 +35,7 @@ layui.use(['form','layer'],function(){
                 userInfoArr.forEach(function(elem,index){
                     if(elem.userPhone===data.field.userPhone && elem.password===data.field.password){
                         userInfoArr[index].isLogin=true;
+                        sessionStorage.loginUser=JSON.stringify(elem);
                         isExist=true;
                     }else{
                         userInfoArr[index].isLogin=false;
@@ -51,9 +64,10 @@ layui.use(['form','layer'],function(){
                     });
                     // 判断新注册的用户在localStorage是否存在
                     if(isAdd){
-                        data.field.id=userInfoArr.length+1;
+                        let len=userInfoArr.length;
+                        data.field.id=String(+userInfoArr[len-1].id+1).padStart(4,"0");
                         let $selectedOption=$("select[name='limits'] option").filter(":selected")
-                        data.field.limits=$selectedOption.val();
+                        data.field.limits=+$selectedOption.val();
                         data.field.department=$selectedOption.text();
 
                         userInfoArr.push(data.field);
@@ -72,9 +86,9 @@ layui.use(['form','layer'],function(){
                 if(data.field.comfirPassword===data.field.password){
                     // 初始化localStorage的userInfo信息
                     let firstRegister=[];
-                    data.field.id=firstRegister.length+1;
+                    data.field.id="0001";
                     let $selectedOption=$("select[name='limits'] option").filter(":selected")
-                    data.field.limits=$selectedOption.val();
+                    data.field.limits=+$selectedOption.val();
                     data.field.department=$selectedOption.text();
                     firstRegister.push(data.field);
                     let jsonUserInfoStr=JSON.stringify(firstRegister);

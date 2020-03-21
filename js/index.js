@@ -1,4 +1,6 @@
 /* 不能修改手机号
+*  用户入口为登陆页面，出口“安全退出”，“注销账号”，“关闭窗口”
+*  用户登陆成功后将该用户存放在sessionStorage中，供其他页面使用
 *  将登陆用户的信息存放在currentUser临时变量中，在退出时把之前的用户替换掉 
 *  layui的element模块自动为导航菜单项添加layui-this选中状态，因此在a标签的伪协议执行的函数必须放置layui.use()外面
 */
@@ -6,40 +8,39 @@
 function removeClickState(){
     $("a[href*='removeClickState']").parent().removeClass("layui-this");
 }
+
 layui.use(['layer','element'],function(){
     var layer=layui.layer
     ,element=layui.element;
-    let currentUser;
     // 根据登陆用户显示该用户的名字
-    function showUsername(){
-        let userInfoArr=JSON.parse(localStorage.userInfo);
-        userInfoArr.some(function(elem,index){
-            if(elem.isLogin===true){
-                currentUser=elem;
-                $("#username").text(elem.username);
-                return true;
-            }else{
-                return false;
-            }
-        });
-    }
-    showUsername();
+    let currentUser=JSON.parse(sessionStorage.loginUser);
+    $("#username").text(currentUser.username);
     // “退出”按钮和“注销”功能函数
     function quitOrDelete(isQuit){
         let userInfoArr=JSON.parse(localStorage.userInfo);
-        userInfoArr.some(function(elem,index){
+        // layer.confirm()是异步方法，因此这样some()依然会把userInfoArr遍历完，相比不做提示框，性能要做妥协
+        // 如果坚持要用some()遍历，不用layer.confirm()，自己做一个提示框，根据提示框的按钮确定isQuit
+        // 如果坚持用layer.confirm()，用forEach()遍历效果比some()好
+        userInfoArr.forEach(function(elem,index){
             if(currentUser.userPhone===elem.userPhone){
                 if(isQuit){
-                    currentUser.isLogin=false;
-                    userInfoArr.splice(index,1,currentUser);
+                    layer.confirm("确定要退出吗？",function(i){
+                        currentUser.isLogin=false;
+                        userInfoArr.splice(index,1,currentUser);
+                        sessionStorage.loginUser=null;
+                        layer.close(i);
+                        localStorage.userInfo=JSON.stringify(userInfoArr);
+                        location.href="../login.html";
+                    });
                 }else{
-                    userInfoArr.splice(index);
+                    layer.confirm("确定要注销吗？",function(i){
+                        userInfoArr.splice(index);
+                        sessionStorage.loginUser=null;
+                        layer.close(i);
+                        localStorage.userInfo=JSON.stringify(userInfoArr);
+                        location.href="../login.html";
+                    });
                 }
-                localStorage.userInfo=JSON.stringify(userInfoArr);
-                location.href="../login.html";
-                return true;
-            }else{
-                return false;
             }
         });
     }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>职工管理</title>
+        <link rel="stylesheet" href="../util/layui/css/layui.css">
+        <!-- <link rel="stylesheet" href="css/common.css"> -->
+        <link rel="stylesheet" href="../css/userPage.css">
+        <script src="../util/jquery/jquery-3.4.0.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <h1>教职工信息</h1>
+            <table id="usersheet" lay-filter="usersheet"></table>
+        </div>
+        <div id="view-wrap">
+            <div id="view"></div>
+        </div>
+        <div id="edit-wrap">
+            <div class="layui-form" id="editbox" lay-filter="editbox">
+                <div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="username" lay-verify="data-username"  class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">部门</label>
+                        <div class="layui-input-inline">
+                            <select name="limits">
+                                <option value="0" disabled>董事会</option>
+                                <option value="1" selected>行政部</option>
+                                <option value="2">教育部</option>
+                                <option value="3">后勤部</option>
+                            </select>  
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">职务</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="duty" lay-verify="required"  class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">个性签名</label>
+                        <div class="layui-input-inline">
+                            <textarea name="sign"  cols="30" rows="6"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="layui-form-item layui-inline">
+                        <div class="layui-input-inline">
+                            <button class="layui-btn layui-btn-md" id="confirmBtn" lay-submit lay-filter="confirmBtn">确认修改</button>
+
+                        </div>
+                    </div>
+                    <button class="layui-btn layui-btn-md" id="cancelBtn">取消修改</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="../util/layui/layui.js"></script>
+    <script type="text/html" id="barDemo">
+        <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    </script>
+    <script type="text/html" id="template">
+        <p>职工信息表</p>
+        <ul>
+            <li><span>姓名：</span><span>{{d.username}}</span></li>
+            <li><span>状态：</span>
+                <span>
+                    {{# if(d.isLogin){ }}
+                    在线
+                    {{# }else{ }}
+                    未登陆
+                    {{#  } }}
+                </span>
+            </li>
+            <li><span>联系方式：</span><span>{{d.userPhone}}</span></li>
+            <li><span>所属部门：</span><span>{{d.department}}</span></li>
+            <li><span>员工编号：</span><span>
+                {{# var fn=function(){ return 2020+d.id}; }}
+                {{ fn() }}
+            </span>
+            </li>
+        </ul>
+        <div><button id="closeBtn">关闭</button></div>
+    </script>
+    <script src="../js/userPage.js"></script>
+</html>

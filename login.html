@@ -50,9 +50,16 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">姓名</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="username" lay-verify="required|data-username" lay-reqText="输入真实的姓名" class="layui-input">
+                        <input type="text" name="username" lay-verify="data-username"  class="layui-input">
                     </div>
                     <div class="layui-form-mid layui-word-aux">您的真实姓名</div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">性别</label>
+                    <div class="layui-input-inline">
+                        <input type="radio" name="sex" value="男" title="男" lay-filter="sex">
+                        <input type="radio" name="sex" value="女" title="女" checked lay-filter="sex">
+                    </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">部门</label>
@@ -79,7 +86,7 @@
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <input type="checkbox"  lay-skin="primary" checked title="同意服务条款" lay-verify="data-acceptProtocal">
+                        <input type="checkbox"  lay-skin="primary"  title="同意服务条款" lay-verify="data-acceptProtocal">
                     </div>
                 </div>
                 <div class="layui-form-item">

@@ -1,0 +1,343 @@
+{
+    "code": 0,
+    "msg": "",
+    "count": 1000,
+    "data": [{
+        "userPhone":"15680487000",
+        "username": "敖一",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":2,
+        "department":"教育部",
+        "id":"0001",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "数学老师",
+        "sign": "暂无签名"
+      }, {
+        "userPhone":"15680487001",
+        "username": "敖二",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":2,
+        "department":"教育部",
+        "id":"0002",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "数学老师",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487002",
+        "username": "敖三",
+        "sex": "女",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":2,
+        "department":"教育部",
+        "id":"0003",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "语文老师",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487003",
+        "username": "敖四",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":2,
+        "department":"教育部",
+        "id":"0004",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "英语老师",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487004",
+        "username": "敖五",
+        "sex": "女",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":1,
+        "department":"行政部",
+        "id":"0005",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "人事助理",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487005",
+        "username": "敖六",
+        "sex": "女",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":1,
+        "department":"行政部",
+        "id":"0006",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "人事助理",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487006",
+        "username": "敖七",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":3,
+        "department":"后勤部",
+        "id":"0007",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "采购",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487007",
+        "username": "敖八",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":1,
+        "department":"行政部",
+        "id":"0008",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "前台",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487008",
+        "username": "敖九",
+        "sex": "女",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":1,
+        "department":"行政部",
+        "id":"0009",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "前台",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487009",
+        "username": "敖十",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":2,
+        "department":"教育部",
+        "id":"0010",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "数学老师",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487010",
+        "username": "张一",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":1,
+        "department":"行政部",
+        "id":"0011",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "宣传",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487011",
+        "username": "张二",
+        "sex": "女",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":1,
+        "department":"行政部",
+        "id":"0012",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "宣传",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487012",
+        "username": "张三",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":3,
+        "department":"后勤部",
+        "id":"0013",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "采购",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487013",
+        "username": "张四",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":3,
+        "department":"后勤部",
+        "id":"0014",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "出纳",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487014",
+        "username": "张五",
+        "sex": "女",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":1,
+        "department":"行政部",
+        "id":"0015",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "招聘",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487015",
+        "username": "张六",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":3,
+        "department":"后勤部",
+        "id":"0016",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "采购",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487016",
+        "username": "张七",
+        "sex": "女",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":1,
+        "department":"行政部",
+        "id":"0017",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "招聘",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487017",
+        "username": "张八",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":3,
+        "department":"后勤部",
+        "id":"0018",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "出纳",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487018",
+        "username": "张九",
+        "sex": "女",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":2,
+        "department":"教育部",
+        "id":"0019",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "英语老师",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487019",
+        "username": "张十",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":2,
+        "department":"教育部",
+        "id":"0020",
+        "isLogin":false,
+        "isLeader":false,
+        "isPresident":false
+        ,"duty": "语文老师",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487368",
+        "username": "敖国祥",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":0,
+        "department":"董事会",
+        "id":"0021",
+        "isLogin":false,
+        "isLeader":true,
+        "isPresident":true
+        ,"duty": "校长",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487367",
+        "username": "张刁",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":1,
+        "department":"行政部",
+        "id":"0022",
+        "isLogin":false,
+        "isLeader":true,
+        "isPresident":false
+        ,"duty": "行政领导",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487366",
+        "username": "张政",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":2,
+        "department":"教育部",
+        "id":"0023",
+        "isLogin":false,
+        "isLeader":true,
+        "isPresident":false
+        ,"duty": "教育领导",
+        "sign": "暂无签名"
+      },{
+        "userPhone":"15680487369",
+        "username": "彭果",
+        "sex": "男",
+        "password":"123456",
+        "comfirPassword":"123456",
+        "limits":3,
+        "department":"后勤部",
+        "id":"0024",
+        "isLogin":false,
+        "isLeader":true,
+        "isPresident":false
+        ,"duty": "后勤领导",
+        "sign": "暂无签名"
+      }
+    ]
+}  

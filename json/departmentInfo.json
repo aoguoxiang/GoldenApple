@@ -1,0 +1,25 @@
+{
+    "code": 0,
+    "msg": "",
+    "count": 1000,
+    "data": [{
+        "id":"01",
+        "name":"行政部",
+        "description":"暂无描述",
+        "leader":"",
+        "nums":0
+      }, {
+        "id":"02",
+        "name":"教育部",
+        "description":"暂无描述",
+        "leader":"",
+        "nums":0
+      }, {
+        "id":"03",
+        "name":"后勤部",
+        "description":"暂无描述",
+        "leader":"",
+        "nums":0
+      }
+    ]
+}  

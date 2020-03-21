@@ -2,8 +2,13 @@
     width: calc(100% - 200px);
     float: right;
 }
+.right header{
+    width: 100%;
+    /* float: right; */
+}
 .horizon-nav{
     padding-left: 0;
+    padding-right: 40px;
     border-radius: 0;
 }
 .clearbox::after{
