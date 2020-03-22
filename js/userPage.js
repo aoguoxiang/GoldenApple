@@ -6,9 +6,10 @@ layui.use(['table','laytpl','form'], function(){
     var table = layui.table
     ,laytpl=layui.laytpl
     ,form=layui.form;
-    // 表格数据渲染
+    // 获取当前登陆用户currentUser和操作权限authorExecu
     let currentUser=JSON.parse(sessionStorage.loginUser);
     let authorExecu=(currentUser.limits === 1 && currentUser.isLeader) || currentUser.isPresident;
+    // 表格数据渲染
     table.render({
         elem: '#usersheet'
         ,toolbar: true

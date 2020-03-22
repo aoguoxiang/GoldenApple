@@ -4,32 +4,25 @@
     "count": 1000,
     "data": [{"id":"0001",
                "name":"气球",
-               "rest":500,
-               "state":true
+               "rest":500
             },{"id":"0002",
                 "name":"玩具飞机",
-                "rest":50,
-                "state":true
+                "rest":50
              },{"id":"0003",
                 "name":"芭比娃娃",
-                "rest":10,
-                "state":true
+                "rest":10
              },{"id":"0004",
                 "name":"玩具橡皮泥",
-                "rest":100,
-                "state":true
+                "rest":100
              },{"id":"0005",
                 "name":"画板",
-                "rest":200,
-                "state":true
+                "rest":200
              },{"id":"0006",
                 "name":"积木",
-                "rest":60,
-                "state":true
+                "rest":60
              },{"id":"0007",
                 "name":"乐高",
-                "rest":10,
-                "state":true
+                "rest":10
              }
          ]
 }

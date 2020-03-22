@@ -57,6 +57,12 @@ layui.use(['layer','element'],function(){
                 break;
         }
     });
+    /* 用事件委托机制去处理各个部门页面跳转的点击功能
+     */
+    $("#pageLink").click(function(e){
+        let src=$(e.target).data("src");
+        $("#pages").attr("src",src);
+    });
     // 更改导航的主题色
     $("dl.nav-bgcolor a").each(function(index){
         $(this).click(function(e){

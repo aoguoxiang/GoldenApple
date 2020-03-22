@@ -1,0 +1,21 @@
+.main{
+    width: 800px;
+}
+.main h1:last-of-type{
+    margin-top: 20px;
+}
+/* 状态栏字体图标 */
+#font-ok,#font-no{
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+}
+#font-ok{
+    background-color: #5FB878;
+}
+#font-no{
+    background-color: red;
+}
+.layui-icon.layui-icon-ok,.layui-icon.layui-icon-close{
+    color: #fff;
+}
