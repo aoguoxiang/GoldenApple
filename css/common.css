@@ -17,8 +17,9 @@ body{
     padding-left: 20px;
     border-bottom: 2px solid ;
 }
-
-/* 职工信息查看框 */
+/* userPage.html===职工信息查看框 
+*  goodsPage.html===新增物资弹出框
+*/
 #view-wrap,#edit-wrap{
     position: fixed;
     width: 100%;
@@ -65,7 +66,9 @@ body{
     float: right;
     margin-right: 15px;
 }
-/* 职工信息编辑框 */
+/* userPage.html===职工信息编辑框 
+*  goodsPage.html===申领物资弹出框
+*/
 #editbox{
     padding-top: 30px;
 }

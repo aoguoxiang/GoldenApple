@@ -3,6 +3,7 @@
 *  用户登陆成功后将该用户存放在sessionStorage中，供其他页面使用
 *  将登陆用户的信息存放在currentUser临时变量中，在退出时把之前的用户替换掉 
 *  layui的element模块自动为导航菜单项添加layui-this选中状态，因此在a标签的伪协议执行的函数必须放置layui.use()外面
+*  注销账号的用户也要同步更新到departmentInfo
 */
 // 清除layui-nav选中状态
 function removeClickState(){
@@ -15,6 +16,28 @@ layui.use(['layer','element'],function(){
     // 根据登陆用户显示该用户的名字
     let currentUser=JSON.parse(sessionStorage.loginUser);
     $("#username").text(currentUser.username);
+    // 封装删除用户时更新departmentInfo
+    function updateRemove(data){
+        let departmentArr=JSON.parse(localStorage.departmentInfo);
+        departmentArr.some(function(elem,index){
+            if(data.limits===elem.limits){
+                departmentArr[index].nums--;
+                if(!data.isLeader){
+                    // 删除普通员工
+                    localStorage.departmentInfo=JSON.stringify(departmentArr);
+                    return true;
+                }else{
+                    // 删除领导
+                    departmentArr[index].leader='';
+                    departmentArr[index].leaderPhone='';
+                    localStorage.departmentInfo=JSON.stringify(departmentArr);
+                    return true;
+                }
+            }else{
+                return false;
+            }
+        });
+    }
     // “退出”按钮和“注销”功能函数
     function quitOrDelete(isQuit){
         let userInfoArr=JSON.parse(localStorage.userInfo);
@@ -34,7 +57,8 @@ layui.use(['layer','element'],function(){
                     });
                 }else{
                     layer.confirm("确定要注销吗？",function(i){
-                        userInfoArr.splice(index);
+                        updateRemove(currentUser);
+                        userInfoArr.splice(index,1);
                         sessionStorage.loginUser=null;
                         layer.close(i);
                         localStorage.userInfo=JSON.stringify(userInfoArr);

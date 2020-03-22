@@ -1,6 +1,7 @@
 body{
     padding-top: 100px;
-    background-color: #393D49;
+    background: url("../imgs/home_01.jpg") no-repeat;
+    background-size: cover;
 }
 .container{
     width: 100%;
@@ -13,7 +14,7 @@ body{
     padding: 10px 40px 10px 10px;
     border: 1px solid rgba(153, 145, 140,0);
     border-radius: 5px;
-    background-color: rgba(153, 145, 140, 0.2);
+    background-color: rgba(5, 40, 46, 0.8);
 }
 .register{
     display: none;
@@ -31,5 +32,8 @@ select[name="limits"]+div{
 a{
     padding: 5px;
     margin: 10px;
-    color: #656565;
+    color: #01AAED;
+}
+a:hover{
+    color: #FFB800;
 }

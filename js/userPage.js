@@ -1,14 +1,37 @@
 /* 先从sessionStorag取出loginUser存放到临时变量currentUser，避免每次用JSON方法转换数据格式
 *  authorExecu判断该登陆用户是否有权限修改该页数据
+* 每当修改某个员工的信息或删除时，把被操作的员工信息用于更新departmentInfo
 */
 
 layui.use(['table','laytpl','form'], function(){
     var table = layui.table
     ,laytpl=layui.laytpl
     ,form=layui.form;
-    // 获取当前登陆用户currentUser和操作权限authorExecu
+    // 获取当前登陆用户currentUser和操作权限authorExecu以及departmentInfo
     let currentUser=JSON.parse(sessionStorage.loginUser);
     let authorExecu=(currentUser.limits === 1 && currentUser.isLeader) || currentUser.isPresident;
+    // 封装删除用户时更新departmentInfo
+    function updateRemove(data){
+        let departmentArr=JSON.parse(localStorage.departmentInfo);
+        departmentArr.some(function(elem,index){
+            if(data.limits===elem.limits){
+                departmentArr[index].nums--;
+                if(!data.isLeader){
+                    // 删除普通员工
+                    localStorage.departmentInfo=JSON.stringify(departmentArr);
+                    return true;
+                }else{
+                    // 上传领导
+                    departmentArr[index].leader='';
+                    departmentArr[index].leaderPhone='';
+                    localStorage.departmentInfo=JSON.stringify(departmentArr);
+                    return true;
+                }
+            }else{
+                return false;
+            }
+        });
+    }
     // 表格数据渲染
     table.render({
         elem: '#usersheet'
@@ -56,6 +79,8 @@ layui.use(['table','laytpl','form'], function(){
                         layer.confirm('真的要删除该职工', function(i){
                             $(tr).remove();
                             let userInfoArr=JSON.parse(localStorage.userInfo);
+                            // 删除的是普通的员工，只需更新相应部门的人数
+                            updateRemove(data);
                             userInfoArr.some(function(elem,index){
                                 if(elem.userPhone === data.userPhone){
                                     userInfoArr.splice(index,1);
@@ -83,6 +108,7 @@ layui.use(['table','laytpl','form'], function(){
                         layer.confirm('真的要删除该职工', function(i){
                             $(tr).remove();
                             let userInfoArr=JSON.parse(localStorage.userInfo);
+                            updateRemove(data);
                             userInfoArr.some(function(elem,index){
                                 if(elem.userPhone === data.userPhone){
                                     userInfoArr.splice(index,1);

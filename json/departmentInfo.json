@@ -3,23 +3,34 @@
     "msg": "",
     "count": 1000,
     "data": [{
-        "id":"01",
+          "name":"董事会",
+          "description":"负责部门的新增和修改领导人",
+          "leader":"敖国祥",
+          "leaderPhone":"15680487368",
+          "nums":1,
+          "limits":0
+        },
+        {
         "name":"行政部",
-        "description":"暂无描述",
-        "leader":"",
-        "nums":0
+        "description":"负责职工信息的修改和删除",
+        "leader":"张刁",
+        "leaderPhone":"15680487367",
+        "nums":9,
+        "limits":1
       }, {
-        "id":"02",
         "name":"教育部",
-        "description":"暂无描述",
-        "leader":"",
-        "nums":0
+        "description":"负责学员的增，删，改，查",
+        "leader":"张政",
+        "leaderPhone":"15680487366",
+        "nums":8,
+        "limits":2
       }, {
-        "id":"03",
         "name":"后勤部",
-        "description":"暂无描述",
-        "leader":"",
-        "nums":0
+        "description":"负责物资新增和申领用户记录",
+        "leader":"彭果",
+        "leaderPhone":"15680487369",
+        "nums":6,
+        "limits":3
       }
     ]
 }  

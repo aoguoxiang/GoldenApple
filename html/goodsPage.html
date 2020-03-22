@@ -12,12 +12,46 @@
     <body>
         <div class="main">
             <h1>物资信息</h1>
+            <button type="button" class="layui-btn add">
+                <i class="layui-icon">&#xe608;</i> 添加
+            </button>
             <table id="goodsSheet" lay-filter="goodsSheet"></table>
             <h1>申领信息</h1>
             <table id="applySheet" lay-filter="applySheet"></table>
         </div>
         <!-- 新增物资弹出框 -->
-        
+        <div id="add-wrap">
+            <div class="layui-form" id="addbox" lay-filter="addbox">
+                <div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">物资编号</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="id" lay-verify="required"  class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">物资名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="name" lay-verify="required"  class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">库存/新增</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="rest" lay-verify="number"  class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="layui-form-item layui-inline">
+                        <div class="layui-input-inline">
+                            <button class="layui-btn layui-btn-md" id="addBtn" lay-submit lay-filter="addBtn">确认</button>
+                        </div>
+                    </div>
+                    <button class="layui-btn layui-btn-md" id="quitBtn">取消</button>
+                </div>
+            </div>
+        </div>
         <!-- 申领物资弹出框 -->
         <div id="edit-wrap">
             <div class="layui-form" id="editbox" lay-filter="editbox">
@@ -25,7 +59,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">数量</label>
                         <div class="layui-input-inline">
-                            <input type="text" name="applyNum" lay-verify="data-nums"  class="layui-input">
+                            <input type="text" name="applyNum" lay-verify="data-nums|number"  class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
